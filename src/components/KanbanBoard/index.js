@@ -61,7 +61,9 @@ export default class KanbanBoard extends Component {
         this.setState({ show: true });
     }
 
-    handleSaveCard() {
+    handleSaveCard(e) {
+        e.preventDefault();
+
         const { card, cards } = this.state;
 
         card._id = `_${Math.random().toString(36).substr(2, 9)}`;
